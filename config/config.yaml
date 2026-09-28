@@ -1,0 +1,18 @@
+# Runtime parameters — loaded by AgentRegistry and passed to Graph(config=...).
+max_retry: 3
+timeout_seconds: 30
+
+# Audit mode: "realtime" (single response, blocking) or "batch" (multi-response,
+# cross-run consistency enabled). The per-request mode in the payload overrides this.
+default_mode: "batch"
+
+# Input-size ceilings (F-02) — DoS / cost guard, enforced by pre_process S-2.
+limits:
+  max_cross_run_samples: 20
+  max_sample_chars: 8000
+  max_retrieved_chunks: 50
+  max_response_chars: 20000
+
+# Instruction-drift LLM assist is disabled in v1 (rule-based only, deterministic).
+llm_assist:
+  enabled: false

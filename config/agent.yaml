@@ -1,0 +1,23 @@
+# Agent Manifest — AgentRegistry entry point
+id: "CMN-C2-226"
+name: "Agent Output Hallucination & Quality Anomaly Detection Agent"
+namespace: "cmn"
+version: "1.0.0"
+enabled: true
+category: "Cat 2"
+generation_mode: "deterministic"
+industry: "CMN"
+
+# Opaque compatibility metadata
+base_type: "ChatAgent"
+
+# Entry point — single dotted import path (module.Class)
+class: "src.graph.graph.Graph"
+
+# Security
+required_trust_level: "VERIFIED_EXTERNAL"
+
+# Compile-time requirements
+requires:
+  secrets: []
+  extras: []
